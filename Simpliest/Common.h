@@ -45,3 +45,4 @@ typedef struct _NTAPI_FUNC
 
 PTEB RtlGetThreadEnvironmentBlock();
 BOOL GetImageExportDirectory(PVOID pModuleBase, PIMAGE_EXPORT_DIRECTORY* ppImageExportDirectory);
+BOOL FetchNtSyscall(IN DWORD dwSysHash, OUT PNT_SYSCALL pNtSys);

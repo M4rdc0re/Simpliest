@@ -15,23 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ctaes.c">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
     <ClCompile Include="IatCamouflage.h">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="TartarusHall.c">
-      <Filter>Archivos de recursos</Filter>
+    <ClCompile Include="main.c">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <MASM Include="HellsHall.asm">
-      <Filter>Archivos de recursos</Filter>
-    </MASM>
+    <ClCompile Include="ctaes.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="TartarusHall.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Structs.h">
@@ -54,5 +49,10 @@
     <ResourceCompile Include="Resource.rc">
       <Filter>Archivos de recursos</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="HellsHall.asm">
+      <Filter>Archivos de origen</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
