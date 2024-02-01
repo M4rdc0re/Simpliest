@@ -9,7 +9,7 @@
 * No CRT library imports
 
 ### Usage
-* Hasher to calculate syscall hashes
+* Hasher to calculate API hashes
 * PayloadBuilder is compiled and executed with the specified payload, it will output a Payload.pc file, that contains the encrypted payload, and its encrypted key and iv
 
 ### Credits
